@@ -1,3 +1,9 @@
+:root {
+  --main-color: #77ff94;
+  --sub-menus-color: #2ec0d3;
+  --third-color: #ff7342;
+  --forth-color: #ffff82;
+}
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +11,7 @@
 }
 body {
   direction: rtl;
-  background-color: #fcb07e;
+  background-color: var(--main-color);
   font-size: 2rem;
   position: relative;
   max-width: 100vw;
@@ -39,7 +45,7 @@ header {
   align-items: center;
 }
 nav {
-  background-color: #73628a;
+  background-color: var(--sub-menus-color);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   height: 60px;
@@ -50,10 +56,11 @@ nav {
   box-sizing: content-box;
   padding-top: 10px;
   align-self: stretch;
+  border: none;
 }
 .connect-me-btn {
   color: white;
-  background-color: #73628a;
+  background-color: var(--sub-menus-color);
   width: fit-content;
   height: fit-content;
   margin-left: 40px;
@@ -73,9 +80,31 @@ main .intro {
 }
 .intro-text > * {
   margin-bottom: 1em;
+  position: relative;
+  overflow: hidden;
 }
-.intro-text span {
+.intro-text .special-text {
   color: white;
-  padding: 0.2rem 0.5rem;
-  color: #313d5a;
+  color: var(--forth-color);
+}
+
+@keyframes entry-text {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.entry-cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  z-index: 99;
+  text-align: center;
+  line-height: 100vh;
+  font-size: 3em;
+  color: var(--forth-color);
 }
