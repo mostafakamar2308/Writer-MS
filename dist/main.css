@@ -169,7 +169,7 @@ main .intro {
   transform: rotateY(180deg) rotateZ(10deg);
   width: 200px;
   right: 20%;
-  top: 14%;
+  top: 0%;
   z-index: 56;
 }
 @keyframes hopInPlace-one {
