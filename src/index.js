@@ -1,5 +1,4 @@
 import gsap from "gsap";
-import { TimelineMax } from "gsap/gsap-core";
 const entryText = "السلام عليكم ...";
 const entryDiv = document.querySelector(".entry-cover");
 function entryTextAnimation() {
@@ -20,7 +19,17 @@ function entryTextAnimation() {
     }
   }, 200);
 }
-function removeElement(ele) {
-  ele.parentNode.removeChild(ele);
-}
+
 entryTextAnimation();
+let btl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+btl.to(".btrfly-1", {
+  duration: 2.5,
+  translateY: "-= 150",
+  translateX: "+= 150",
+  yoyo: true,
+  ease: true,
+});
+
+let rtl = gsap.timeline({ repeat: -1 });
+rtl.to(".bunny", { duration: 1.5 });
+// ttl.reverse();
