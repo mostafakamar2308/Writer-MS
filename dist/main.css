@@ -9,15 +9,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
 body {
   direction: rtl;
   color: white;
   font-size: 2rem;
   position: relative;
-  max-width: 100vw;
-  min-height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
   background: hsla(186, 67%, 59%, 1);
-
   background: radial-gradient(
     circle,
     hsla(186, 67%, 59%, 1) 24%,
@@ -52,9 +56,12 @@ a {
 }
 header {
   display: flex;
-  width: 100%;
+  width: 97%;
+  height: fit-content;
   justify-content: space-between;
   align-items: center;
+  background: rgba(141, 171, 188, 0.04);
+  backdrop-filter: blur(5px);
 }
 nav {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
@@ -83,13 +90,22 @@ nav {
 }
 
 main {
-  min-height: 80vh;
+  height: 100vh;
+  width: 100%;
+  direction: rtl;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+main > section {
+  scroll-snap-align: start;
 }
 main .intro {
   height: 80vh;
   max-width: 100vw;
   display: grid;
   padding: 5rem 5rem 0 0;
+  padding-top: 200px;
   grid-template-columns: 50% 50%;
   grid-template-rows: 80% auto;
 }
@@ -205,4 +221,13 @@ main .intro {
 }
 .intro-btns *:hover {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.myWorld,
+.add-to-my-world {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
