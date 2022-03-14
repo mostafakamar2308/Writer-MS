@@ -1,9 +1,9 @@
 import gsap from "gsap";
-const entryText = "السلام عليكم ...";
+const entryText = "السلام عليكم . . . ";
 const entryDiv = document.querySelector(".entry-cover");
+entryDiv.style.display = "none";
 function entryTextAnimation() {
   let i = 0;
-  let j = 1;
 
   let interval = setInterval(function () {
     if (i < entryText.length) {
@@ -20,4 +20,4 @@ function entryTextAnimation() {
   }, 200);
 }
 
-entryTextAnimation();
+// entryTextAnimation();

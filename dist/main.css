@@ -1,237 +1,127 @@
 @import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Vibes&display=swap");
+
 :root {
-  --main-color: #77ff94;
-  --sub-menus-color: #2ec0d3;
-  --third-color: #ff7342;
-  --forth-color: #ffff82;
+  --special-text-color: #eba809;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Amiri", serif;
-}
-header {
-  position: sticky;
-  top: 0;
-  z-index: 80;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  color: #1a1a1a;
 }
 body {
-  direction: rtl;
-  color: white;
-  font-size: 2rem;
   position: relative;
-  overflow: hidden;
-  scroll-behavior: smooth;
-  background: hsla(186, 67%, 59%, 1);
-  background: radial-gradient(
-    circle,
-    hsla(186, 67%, 59%, 1) 24%,
-    hsla(217, 93%, 48%, 0.6) 75%
-  );
-
-  background: -moz-radial-gradient(
-    circle,
-    hsla(186, 67%, 59%, 1) 24%,
-    hsla(217, 93%, 48%, 0.6) 75%
-  );
-
-  background: -webkit-radial-gradient(
-    circle,
-    hsla(186, 67%, 59%, 1) 24%,
-    hsla(217, 93%, 48%, 0.6) 75%
-  );
-
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#50CFDD", endColorstr="#095FEB", GradientType=1 );
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  direction: rtl;
+  background-color: #ebe5df;
 }
-.logo,
-.connect-me-btn {
-  display: inline-block;
-  cursor: pointer;
-  margin-right: 20px;
-  color: black;
-}
-a {
-  text-decoration: none;
+.entry-cover {
+  font-family: "Vibes", cursive;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: 555;
+  background-color: black;
   color: white;
-  transition: 0.2s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
 }
 header {
-  display: flex;
-  width: 97%;
-  height: fit-content;
+  width: 100vw;
+  height: 10vh;
+  display: grid;
+  grid-template-columns: 40% 40%;
   justify-content: space-between;
-  align-items: center;
-  background: rgba(141, 171, 188, 0.04);
-  backdrop-filter: blur(5px);
+  padding: 0 3rem;
 }
 nav {
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  height: 60px;
-  width: 50%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  box-sizing: content-box;
-  padding-top: 10px;
-  align-self: stretch;
-  border: none;
+  font-size: 1.7em;
+  padding-top: 0.5rem;
 }
-.connect-me-btn {
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  color: white;
-  width: fit-content;
-  height: fit-content;
-  margin-left: 40px;
-  margin-bottom: 10px;
-  padding: 0.7rem;
-  border-radius: 13px;
-  transition: 0.5s;
+nav * {
+  text-decoration: none;
+  position: relative;
 }
-
-main {
+nav * > span {
+  transition: 0.35s;
+  width: 0%;
+  transform-origin: center center;
+}
+nav *:hover > span {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 100%;
+  height: 3%;
+  background-color: #1a1a1a;
+}
+.intro {
+  width: 100vw;
   height: 100vh;
-  width: 100%;
-  direction: rtl;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
 }
-main > section {
-  scroll-snap-align: start;
-}
-main .intro {
-  height: 80vh;
-  max-width: 100vw;
-  display: grid;
-  padding: 5rem 5rem 0 0;
-  padding-top: 200px;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 80% auto;
-}
-.intro-text > * {
-  margin-bottom: 1em;
-  position: relative;
-  overflow: hidden;
-}
-.intro-text .special-text {
-  color: white;
-  color: var(--forth-color);
-  font-size: 4.5rem;
-}
-
-@keyframes entry-text {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.entry-cover {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: black;
-  z-index: 99;
-  text-align: center;
-  line-height: 100vh;
-  font-size: 3em;
-  color: var(--forth-color);
-  font-family: "Vibes", cursive;
-}
-.intro-images {
-  min-width: 400px;
-  position: relative;
-  margin-top: 100px;
-  margin-left: 200px;
-}
-.intro-images > * {
-  position: absolute;
-}
-
-.openbook {
-  width: 100%;
-  height: auto;
-  inset: 0;
-  z-index: 55;
-  opacity: 0.95;
-}
-.tree {
-  width: 75%;
-  left: 70px;
-  top: 1%;
-}
-.btrfly-1 {
-  width: 70px;
-  z-index: 55;
-  left: 20%;
-  animation: hopInPlace-one 1s ease alternate-reverse infinite;
-}
-.btrfly-2 {
-  right: 15%;
-  top: 20%;
-  width: 70px;
-  z-index: 55;
-  animation: hopInPlace-two 1s ease alternate-reverse infinite;
-}
-.moon {
-  width: 150px;
-  top: -150px;
-  left: 0;
-}
-
-.bunny {
-  transform: rotateY(180deg) rotateZ(10deg);
-  width: 200px;
-  right: 20%;
-  top: 0%;
-  z-index: 56;
-}
-@keyframes hopInPlace-one {
-  from {
-    transform: translateY(10%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
-@keyframes hopInPlace-two {
-  from {
-    transform: translateY(10%) rotateY(180deg) rotateZ(40deg);
-  }
-  to {
-    transform: translateY(0%) rotateY(180deg) rotateZ(40deg);
-  }
-}
-
-.intro-btns {
+.intro-content {
+  width: 100vw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 2rem;
   align-items: center;
-  grid-column: span 2;
 }
-
+.intro-text {
+  font-size: 2em;
+}
+.special-text {
+  font-size: 2.15em;
+  color: var(--special-text-color);
+}
+.intro-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
+}
 .intro-btns * {
-  border: 1px solid white;
-  padding: 1rem 2rem;
-  background-color: transparent;
-  transition: 1s all;
-  border-radius: 10px;
-  z-index: 58;
+  padding: 0.5rem 1rem;
+  border: black 1px solid;
+  transition: 0.4s ease;
 }
 .intro-btns *:hover {
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  background-color: #1a1a1a;
+  color: #ebe5df;
 }
 
-.myWorld,
-.add-to-my-world {
+#myWorld {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  border-top: #1a1a1a 1px solid;
+  border-bottom: #1a1a1a 1px solid;
+}
+#add-to-my-world {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+#bg-canvas {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* background-color: rgb(34, 33, 33); */
 }
