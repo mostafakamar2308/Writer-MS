@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Vibes&display=swap");
 :root {
   --main-color: #77ff94;
   --sub-menus-color: #2ec0d3;
@@ -8,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Amiri", serif;
 }
 header {
   position: sticky;
@@ -139,6 +141,7 @@ main .intro {
   line-height: 100vh;
   font-size: 3em;
   color: var(--forth-color);
+  font-family: "Vibes", cursive;
 }
 .intro-images {
   min-width: 400px;
@@ -217,6 +220,7 @@ main .intro {
   padding: 1rem 2rem;
   background-color: transparent;
   transition: 1s all;
+  border-radius: 10px;
   z-index: 58;
 }
 .intro-btns *:hover {
