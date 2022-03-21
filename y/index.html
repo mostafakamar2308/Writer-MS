@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منة سامح | الرئيسية</title>
+  <link rel="stylesheet" href="main.css" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.4.3/webcomponents-loader.js"></script>
+</head>
+
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="entry-cover"></div>
+  <header>
+    <div class="logo">
+      <img src="./logo-black.png" alt="" width="90px" />
+    </div>
+    <nav>
+      <a href="#"> الرئيسية <span></span></a>
+      <a href="#">كتبى <span></span></a>
+      <a href="#">عنى <span></span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <section class="intro-content">
+        <div class="intro-text">
+          <h1>
+            أنا <span class="special-text">منة سامح</span>
+            <span class="cover"></span>
+          </h1>
+          <h2>روائية تعيش في <span class="cover"></span></h2>
+          <h2>
+            <span class="special-text" id="special-world">عالمها الخاص</span>
+            <span class="cover"></span>
+          </h2>
+        </div>
+
+        <lottie-player class="intro-images" src="./new-animation.json" background="transparent" speed="1"
+          style="width: 50%; height: 50%" loop autoplay></lottie-player>
+      </section>
+      <div class="intro-btns">
+        <button id="myWorld-btn">خذ جولة في عالمى</button>
+        <button id="add-to-my-world-btn">أضف إلى عالمى</button>
+      </div>
+    </section>
+    <section class="myWorld" id="myWorld">
+      <div class="backward mover">&lt;</div>
+      <div class="book">
+        <div class="bookInfo">
+          <h1 class="bookName"></h1>
+          <p class="bookDescription"></p>
+          <a href="" class="book-link" target="_blanck">اقرأ علي واتباد</a>
+        </div>
+        <div class="bookCover">
+          <img src="" alt="" />
+        </div>
+      </div>
+      <div class="forward mover">&gt;</div>
+    </section>
+    <section class="add-to-my-world" id="add-to-my-world">
+      <div class="add-world-btns">
+        <button class="draw-btn selected">أرني إبداعك</button>
+        <button class="drawings-btn">إبداعات زوار الموقع</button>
+      </div>
+      <div class="draw-div">
+        <div class="drawer-info">
+            <label for="name">الاسم</label>
+            <input type="text" name="name" id="sender-name" />
+            <div>
+              <button id="reset-drawing">أعد كل شيء كما كان</button>
+              <button id ="send-drawing">قدم ما لديك</button>
+            </div>
+
+        </div>
+        <div class="canvas-div">
+          <canvas id="draw"></canvas>
+          <div class="brush-settings">
+
+            <div class="brush-size">
+              <label for="brush-size-range">حجم الفرشاة</label>
+              <input type="range" name="brush-size-range" id="brush-size-range" min="2" max="20" value="5" step="2" />
+            </div>
+            <div class="brush-color">
+              <label for="brush-color-range">لون الفرشاة</label>
+              <input type="color" name="brush-color-range" id="brush-color-range" />
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="drawings">
+        <div class="pic">
+          <div class="pic-img">
+            <img src="./Hmmm.png" alt="">
+          </div>
+          <h1>مصطفى قمر</h1>
+        </div>
+        <div class="pic">
+          <div class="pic-img">
+            <img src="./hmmmmm.png" alt="">
+          </div>
+          <h1>مصطفى قمر</h1>
+        </div>
+      </div>
+    </section>
+    <section id="about-me">
+      <h1>السلام عليكم . . . </h1>
+      <p>أُدعى <span>منة اللّٰه سامح فاروق</span> ، هاوية لا روائية، لكن لن يدوم هذا طويلاً.
+        اكتب كثيراً عن المغامرات، الدراما و السايكولوجيا، مع القليل من الفانتازيا التي تقلب مجرى الأحداث تماماً مع بعض العاطفة التي لن تضر.
+        اغلب ما أكتبه يدور داخل عصور مازال الناس فيها يتواصلون بالرسائل الورقية.
+         أحاول دوما أن أسطر ما يدور في عالمي الخاص، <span>واريد أن أشارككم بكتاباتي هذا العالم الرائع</span> . . .</p>
+         <div class="links">
+           <p>
+             تابعني علي 
+             
+            </p>
+            <a href="https://www.wattpad.com/user/Menna_Chan72" target="_blank"><img src="./wattpad.png" alt=""></a>
+         </div>
+    </section>
+  </main>
+</body>
+<script src="main.js"></script>
+
+</html>

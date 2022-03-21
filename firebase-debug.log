@@ -1,0 +1,30 @@
+[debug] [2022-03-20T14:55:01.237Z] ----------------------------------------------------------------------
+[debug] [2022-03-20T14:55:01.240Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2022-03-20T14:55:01.240Z] CLI Version:   10.4.0
+[debug] [2022-03-20T14:55:01.240Z] Platform:      win32
+[debug] [2022-03-20T14:55:01.240Z] Node Version:  v14.0.0
+[debug] [2022-03-20T14:55:01.241Z] Time:          Sun Mar 20 2022 16:55:01 GMT+0200 (Eastern European Standard Time)
+[debug] [2022-03-20T14:55:01.241Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-03-20T14:55:01.319Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-20T14:55:01.319Z] > authorizing via signed-in user (mostafasama771@gmail.com)
+[debug] [2022-03-20T14:55:01.319Z] [iam] checking project menna-sameh for permissions ["firebase.projects.get"]
+[debug] [2022-03-20T14:55:01.322Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/menna-sameh:testIamPermissions [none]
+[debug] [2022-03-20T14:55:01.322Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/menna-sameh:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-03-20T14:55:04.996Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/menna-sameh:testIamPermissions 200
+[debug] [2022-03-20T14:55:04.997Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/menna-sameh:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-03-20T14:55:05.001Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/menna-sameh [none]
+[debug] [2022-03-20T14:55:05.902Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/menna-sameh 200
+[debug] [2022-03-20T14:55:05.903Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/menna-sameh {"projectId":"menna-sameh","projectNumber":"179216312683","displayName":"menna-sameh","name":"projects/menna-sameh","resources":{"hostingSite":"menna-sameh","storageBucket":"menna-sameh.appspot.com","locationId":"europe-west"},"state":"ACTIVE"}
+[info] 
+[info] === Serving from 'E:\web projects\MS'...
+[info] 
+[debug] [2022-03-20T14:55:05.911Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/menna-sameh/sites 
+[debug] [2022-03-20T14:55:07.569Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/menna-sameh/sites 200
+[debug] [2022-03-20T14:55:07.570Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/menna-sameh/sites {"sites":[{"name":"projects/179216312683/sites/menna-sameh","defaultUrl":"https://menna-sameh.web.app","appId":"1:179216312683:web:04f120cea2135624b9c42e","type":"DEFAULT_SITE"}]}
+[debug] [2022-03-20T14:55:07.571Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/menna-sameh/webApps/1:179216312683:web:04f120cea2135624b9c42e/config [none]
+[debug] [2022-03-20T14:55:08.932Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/menna-sameh/webApps/1:179216312683:web:04f120cea2135624b9c42e/config 200
+[debug] [2022-03-20T14:55:08.933Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/menna-sameh/webApps/1:179216312683:web:04f120cea2135624b9c42e/config {"projectId":"menna-sameh","appId":"1:179216312683:web:04f120cea2135624b9c42e","storageBucket":"menna-sameh.appspot.com","locationId":"europe-west","apiKey":"AIzaSyC_KjFaDo6wF8ibJJPppBfvgeRXezK3bXk","authDomain":"menna-sameh.firebaseapp.com","messagingSenderId":"179216312683","measurementId":"G-5ZYEQCZ17P"}
+[info] i  hosting: Serving hosting files from: y {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1my\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: 127.0.0.1 - - [20/Mar/2022:14:58:26 +0000] "GET / HTTP/1.1" 200 5164 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [20/Mar/2022:14:58:26 +0000] \"GET / HTTP/1.1\" 200 5164 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36\""}}
