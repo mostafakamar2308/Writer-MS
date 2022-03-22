@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { uploadImages } from "./firebase.js";
 
 const drawCanvas = document.querySelector("#draw");
 let boundries = drawCanvas.getBoundingClientRect();
@@ -53,16 +54,21 @@ sendBtn.addEventListener("click", function () {
     document.querySelector("#sender-name").value.trim() != "" &&
     document.querySelector("#sender-name").value !== "Test"
   ) {
-    let image = drawCanvas.toDataURL("image/png");
-    let link = document.createElement("a");
-    link.target = "_blank";
-    link.href = image;
+    // let image = drawCanvas.toDataURL("image/png");
+    // let link = document.createElement("a");
+    // link.target = "_blank";
+    // link.href = URL.createObjectURL(image);
+    // console.log(link.href);
+    // link.download = document.querySelector("#sender-name").value + ".png";
+    // link.rel = "noreferrer";
+    let blobImage = drawCanvas.toBlob((blob) => {
+      uploadImages(blob, document.querySelector("#sender-name").value + ".png");
+    }, "image/png");
 
-    link.download = document.querySelector("#sender-name").value + ".png";
-    link.rel = "noreferrer";
-    link.click();
-    document.body.appendChild(link);
-    document.body.removeChild(link);
+    // link.click();
+    uploadSuccessfull();
+    // document.body.appendChild(link);
+    // document.body.removeChild(link);
   } else if (document.querySelector("#sender-name").value === "Test") {
     console.log("You Found the first secret");
     removeAllThings();
@@ -182,4 +188,29 @@ function showLink() {
   h.style.opacity = 0;
   document.querySelector("#secret-container").appendChild(h);
   gsap.to(h, { duration: 1, opacity: 1 });
+}
+
+function uploadSuccessfull() {
+  let container = document.createElement("section");
+  container.className = "upload-container";
+  container.addEventListener("click", function (e) {
+    if (e.target.className === "upload-container") {
+      document.body.removeChild(container);
+    }
+  });
+  document.body.appendChild(container);
+  let div = document.createElement("div");
+  container.appendChild(div);
+  let h1 = document.createElement("h1");
+  h1.textContent = `تم الرفع بنجاح`;
+  div.appendChild(h1);
+  let p = document.createElement("p");
+  p.textContent = `سيتم مراجعته قريبا ثم إضافته في قسم إضافات الزوار`;
+  div.appendChild(p);
+  let btn = document.createElement("button");
+  btn.textContent = "لقد فهمت!";
+  div.appendChild(btn);
+  btn.addEventListener("click", function () {
+    document.body.removeChild(container);
+  });
 }

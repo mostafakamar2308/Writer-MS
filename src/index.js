@@ -1,5 +1,6 @@
 import { chooseBook } from "/src/book.js";
 import gsap from "gsap";
+import { getAllImages } from "./firebase";
 const entryText = "السلام عليكم . . . ";
 const entryDiv = document.querySelector(".entry-cover");
 entryDiv.style.display = "none";
@@ -124,6 +125,8 @@ drawCollectionView.addEventListener("click", function () {
     "300%",
     "flex"
   );
+  document.querySelector(".drawings").innerHTML = "";
+  getAllImages();
 });
 
 AboutMe.addEventListener("click", function () {
