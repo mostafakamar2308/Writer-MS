@@ -9,6 +9,7 @@ const brushSize = document.querySelector("#brush-size-range");
 const resetBtn = document.querySelector("#reset-drawing");
 const sendBtn = document.querySelector("#send-drawing");
 const canvasColor = document.querySelector("#canvas-color-range");
+let finalText = "أخيرا يا بنتي ااااااااا";
 
 const ctx = drawCanvas.getContext("2d");
 ctx.fillStyle = "white";
@@ -64,7 +65,9 @@ sendBtn.addEventListener("click", function () {
     document.body.removeChild(link);
   } else if (document.querySelector("#sender-name").value === "Test") {
     console.log("You Found the first secret");
-    createSecret();
+    removeAllThings();
+
+    setTimeout(createSecret, 1000);
   }
 });
 function createSecret() {
@@ -119,24 +122,64 @@ function getName(r) {
     r.children[2].textContent = "";
   }, 1050);
   r.removeChild(r.children[1]);
+  r.removeChild(r.children[1]);
+
   let newTextbox = document.createElement("input");
   r.appendChild(newTextbox);
   newTextbox.addEventListener("input", function () {
     checkApproval(r);
   });
+  let p = document.createElement("p");
+  r.append(p);
   gsap.to(r, { delay: 1.05, duration: 1, opacity: 1 });
 }
 //حلها بانك تمسح الانبوت بوكس دا وتحط واحد تاني وخلاص
 function checkApproval(parent) {
-  if (parent.children[2].value == "اه") {
-    parent.children[1].textContent = "أخيرا يا بنتي ااااااااا";
-  } else if (parent.children[2].value == "لا") {
-    parent.children[1].textContent = "ساد والله";
+  if (parent.children[1].value == "اه") {
+    parent.children[2].textContent = "";
+    WriteWord(parent.children[2]);
+  } else if (parent.children[1].value == "لا") {
+    parent.children[2].textContent = "ساد والله";
   } else {
-    parent.children[1].textContent = "يا اه يا لا";
+    parent.children[2].textContent = "يا اه يا لا";
   }
 }
 canvasColor.addEventListener("input", function () {
   ctx.fillStyle = canvasColor.value;
   ctx.fillRect(0, 0, drawCanvas.width, drawCanvas.height);
 });
+
+function removeAllThings() {
+  gsap.to("header", { duration: 1, opacity: 0, display: "none" });
+  gsap.to(".add-to-my-world", { duration: 1, opacity: 0, display: "none" });
+}
+function WriteWord(r) {
+  let i = 0;
+  r.parentNode.children[1].readOnly = true;
+  let inter = setInterval(() => {
+    if (i < finalText.length) {
+      r.textContent += finalText[i];
+      i++;
+    } else {
+      removeEveryThingToShowLink();
+      clearInterval(inter);
+    }
+  }, 200);
+}
+function removeEveryThingToShowLink() {
+  let rel = document.querySelector("#secret-container").children[0];
+  gsap.to(rel, { delay: 3, duration: 1, opacity: 0, display: "none" });
+  setTimeout(showLink, 4500);
+}
+function showLink() {
+  let h = document.createElement("h1");
+  let a = document.createElement("a");
+  a.href = "#";
+  a.target = "_blank";
+  a.textContent = `اضغطي وشوفى المفاجأة الأعظم هنا، دي
+  اكتر حاجة تعبت فيها لول`;
+  h.appendChild(a);
+  h.style.opacity = 0;
+  document.querySelector("#secret-container").appendChild(h);
+  gsap.to(h, { duration: 1, opacity: 1 });
+}
