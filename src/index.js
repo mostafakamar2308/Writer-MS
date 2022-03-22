@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { getAllImages } from "./firebase";
 const entryText = "السلام عليكم . . . ";
 const entryDiv = document.querySelector(".entry-cover");
-entryDiv.style.display = "none";
+entryDiv.style.display = "flex";
 function entryTextAnimation() {
   let i = 0;
 
@@ -22,7 +22,7 @@ function entryTextAnimation() {
   }, 200);
 }
 
-// entryTextAnimation();
+entryTextAnimation();
 
 const addToWorldBtn = document.querySelector("#add-to-my-world-btn");
 const goToWorldBtn = document.querySelector("#myWorld-btn");
