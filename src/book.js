@@ -38,15 +38,21 @@ export function chooseBook() {
     bookNameItem.textContent = myBooks[bookNum].bookName;
     bookDescriptionItem.textContent = myBooks[bookNum].description;
     bookLink.setAttribute("href", myBooks[bookNum].link);
-    changeColor(bookNum);
     bookNum = 1;
+    // divOneBoundries = bookCover.children[0].getBoundingClientRect();
+    // divTwoBoundries = bookCover.children[1].getBoundingClientRect();
+    // divThreeBoundries = bookCover.children[2].getBoundingClientRect();
+    // divFourBoundries = bookCover.children[3].getBoundingClientRect();
   } else {
     bookCoverItem.src = myBooks[bookNum].cover;
     bookNameItem.textContent = myBooks[bookNum].bookName;
     bookDescriptionItem.textContent = myBooks[bookNum].description;
     bookLink.setAttribute("href", myBooks[bookNum].link);
-    changeColor(bookNum);
     bookNum = 0;
+    // divOneBoundries = bookCover.children[0].getBoundingClientRect();
+    // divTwoBoundries = bookCover.children[1].getBoundingClientRect();
+    // divThreeBoundries = bookCover.children[2].getBoundingClientRect();
+    // divFourBoundries = bookCover.children[3].getBoundingClientRect();
   }
 }
 function changeColor(numb) {
@@ -71,3 +77,74 @@ forwardMove.addEventListener("click", function () {
   }, 350);
   gsap.to(".book", { delay: 0.5, duration: 0.35, x: "0" });
 });
+
+// let bookCor = {
+//   x: undefined,
+//   y: undefined,
+// };
+
+// bookCover.addEventListener("mousemove", function (e) {
+//   bookCor.x = e.x;
+//   bookCor.y = e.y;
+//   divOneBoundries = bookCover.children[0].getBoundingClientRect();
+//   divTwoBoundries = bookCover.children[1].getBoundingClientRect();
+//   divThreeBoundries = bookCover.children[2].getBoundingClientRect();
+//   divFourBoundries = bookCover.children[3].getBoundingClientRect();
+//   skewBook();
+// });
+// function skewBook() {
+//   if (bookCor.x < divTwoBoundries.right && bookCor.y < divTwoBoundries.bottom) {
+//     console.log(
+//       bookCor.x,
+//       divTwoBoundries.right,
+//       bookCor.y,
+//       divTwoBoundries.bottom,
+//       divThreeBoundries.top
+//     );
+//     console.log("It's in div 2");
+//     RotateDegree(0);
+//     skewDegree((divTwoBoundries.right / bookCor.x) * 4);
+//   } else if (
+//     bookCor.x > divTwoBoundries.right &&
+//     bookCor.y < divTwoBoundries.bottom &&
+//     bookCor.y < divThreeBoundries.top
+//   ) {
+//     console.log(
+//       bookCor.x,
+//       divTwoBoundries.right,
+//       bookCor.y,
+//       divTwoBoundries.bottom
+//     );
+//     console.log("It's in Div 1");
+//     skewDegree(-(divTwoBoundries.right / bookCor.x) * 4);
+//     RotateDegree(0);
+//   } else if (
+//     bookCor.x < divTwoBoundries.right &&
+//     bookCor.y > divTwoBoundries.bottom &&
+//     bookCor.y > divThreeBoundries.top
+//   ) {
+//     console.log(
+//       bookCor.x,
+//       divTwoBoundries.right,
+//       bookCor.y,
+//       divTwoBoundries.bottom
+//     );
+//     console.log("It's in Div 3");
+//     skewDegree(0);
+//     RotateDegree((divTwoBoundries.right / bookCor.x) * 4);
+//   } else if (
+//     bookCor.x > divTwoBoundries.right &&
+//     bookCor.y > divTwoBoundries.bottom &&
+//     bookCor.y > divThreeBoundries.top
+//   ) {
+//     console.log(
+//       bookCor.x,
+//       divTwoBoundries.right,
+//       bookCor.y,
+//       divTwoBoundries.bottom
+//     );
+//     console.log("It's in Div 4");
+//     skewDegree(0);
+//     RotateDegree(-(divTwoBoundries.right / bookCor.x) * 4);
+//   }
+// }

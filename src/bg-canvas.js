@@ -1,24 +1,35 @@
 const canvas = document.querySelector("#bg-canvas");
 const ctx = canvas.getContext("2d");
+let arr = [];
 let mouseCo = {
   x: undefined,
   y: undefined,
 };
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = document.documentElement.clientWidth;
+canvas.height = document.documentElement.clientHeight;
 window.addEventListener("resize", resize_canvas_to_full);
 function resize_canvas_to_full() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = document.documentElement.clientWidth;
+  canvas.height = document.documentElement.clientHeight;
+  arr = [];
+  for (let i = 0; i < 50; i++) {
+    let cyc = new Circle(
+      Math.random() * (innerWidth - 50 * 2.5) + 50,
+      Math.random() * (innerHeight - 50 * 2.5) + 50,
+      `hsl(${Math.random() * 360}, 80%, 40%)`
+    );
+    arr.push(cyc);
+  }
+  moveCircle();
 }
-let maxRadius = 50;
+let maxRadius = 40;
 function Circle(x, y, color) {
   this.x = x;
   this.y = y;
   this.radius = Math.random() * 15 + 2;
   this.minRadius = this.radius;
-  this.dx = Math.random() * 04;
-  this.dy = Math.random() * 04;
+  this.dx = Math.random() * 3 + 1;
+  this.dy = Math.random() * 3 + 1;
   this.color = color;
   this.draw = function () {
     ctx.beginPath();
@@ -52,7 +63,6 @@ function Circle(x, y, color) {
     this.draw();
   };
 }
-let arr = [];
 for (let i = 0; i < 50; i++) {
   let cyc = new Circle(
     Math.random() * (innerWidth - 50 * 2.5) + 50,

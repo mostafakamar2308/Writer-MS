@@ -21,7 +21,7 @@ function entryTextAnimation() {
   }, 200);
 }
 
-entryTextAnimation();
+// entryTextAnimation();
 
 const addToWorldBtn = document.querySelector("#add-to-my-world-btn");
 const goToWorldBtn = document.querySelector("#myWorld-btn");
@@ -63,7 +63,6 @@ function addToWorldAppear() {
   }
 }
 function introAppear() {
-  document.body.style.background = "#ebe5df";
   gsap.to(addToWorld, { duration: 0.5, display: "none" });
   gsap.to(myWorld, { duration: 0.5, display: "none" });
   gsap.to("#about-me", { duration: 0.5, y: "200%", display: "none" });

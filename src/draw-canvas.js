@@ -8,11 +8,11 @@ const brushColor = document.querySelector("#brush-color-range");
 const brushSize = document.querySelector("#brush-size-range");
 const resetBtn = document.querySelector("#reset-drawing");
 const sendBtn = document.querySelector("#send-drawing");
-// That's for aborting the event listener
-const areaListener = new AbortController().signal;
-const areaListener2 = new AbortController().signal;
+const canvasColor = document.querySelector("#canvas-color-range");
 
 const ctx = drawCanvas.getContext("2d");
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, drawCanvas.width, drawCanvas.height);
 
 function draw(x, y, radius, color) {
   ctx.lineWidth = radius;
@@ -42,7 +42,8 @@ drawCanvas.addEventListener("mouseup", function () {
   ctx.beginPath();
 });
 resetBtn.addEventListener("click", function () {
-  ctx.clearRect(0, 0, drawCanvas.width, drawCanvas.width);
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, drawCanvas.width, drawCanvas.width);
   document.querySelector("#sender-name").value = "";
 });
 const iff = document.querySelector("#down");
@@ -86,13 +87,9 @@ function createSecret() {
   let p = document.createElement("p");
   p.textContent = "";
   secret.appendChild(p);
-  textbox.addEventListener(
-    "input",
-    function () {
-      changeText(textbox, p);
-    },
-    { signal: areaListener }
-  );
+  textbox.addEventListener("input", function () {
+    changeText(textbox, p);
+  });
 }
 let changeText = function (textbox, p) {
   if (textbox.value == "م") {
@@ -139,3 +136,7 @@ function checkApproval(parent) {
     parent.children[1].textContent = "يا اه يا لا";
   }
 }
+canvasColor.addEventListener("input", function () {
+  ctx.fillStyle = canvasColor.value;
+  ctx.fillRect(0, 0, drawCanvas.width, drawCanvas.height);
+});
