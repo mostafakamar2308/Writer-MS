@@ -162,6 +162,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/hmbrger-menu.js":
+/*!*****************************!*\
+  !*** ./src/hmbrger-menu.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n\r\nconst menu = document.querySelector(\".hmbrger-menu\");\r\nmenu.addEventListener(\"click\", function () {\r\n  if (\r\n    document.querySelector(\"nav\").style.display == \"none\" ||\r\n    !document.querySelector(\"nav\").style.display\r\n  ) {\r\n    gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].fromTo(\"nav\", { y: \"-100%\", display: \"flex\" }, { duration: 1, y: 0 });\r\n    for (let i = 0; i < 3; i++) {\r\n      menu.firstChild.children[i].setAttribute(\"fill\", \"white\");\r\n    }\r\n  } else {\r\n    gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].to(\"nav\", { duration: 1, y: \"-100%\", display: \"none\" });\r\n    for (let i = 0; i < 3; i++) {\r\n      menu.firstChild.children[i].setAttribute(\"fill\", \"black\");\r\n    }\r\n  }\r\n});\r\nlet navLinks = Array.from(document.querySelector(\"nav\").children);\r\nnavLinks.forEach((ele) => {\r\n  ele.addEventListener(\"click\", function () {\r\n    gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].to(\"nav\", { duration: 1, y: \"-100%\", display: \"none\" });\r\n    for (let i = 0; i < 3; i++) {\r\n      menu.firstChild.children[i].setAttribute(\"fill\", \"black\");\r\n    }\r\n  });\r\n});\r\n\n\n//# sourceURL=webpack://menna-sameh/./src/hmbrger-menu.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -324,7 +335,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	__webpack_require__("./src/bg-canvas.js");
 /******/ 	__webpack_require__("./src/book.js");
 /******/ 	__webpack_require__("./src/draw-canvas.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/firebase.js");
+/******/ 	__webpack_require__("./src/firebase.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/hmbrger-menu.js");
 /******/ 	
 /******/ })()
 ;

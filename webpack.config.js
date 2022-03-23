@@ -6,6 +6,7 @@ module.exports = {
     "/src/book.js",
     "/src/draw-canvas.js",
     "/src/firebase.js",
+    "/src/hmbrger-menu.js",
   ],
   mode: "development",
   watch: true,
